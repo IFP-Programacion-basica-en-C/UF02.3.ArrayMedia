@@ -23,20 +23,22 @@ int pideNumEntreRango(int, int);
 int pideNum(int);
 void inicialitzarVector(int [],int);
 void pintaVector (int[], int);
-// int mediaArray (int [], int);
+float mediaArray (int [], int);
 
 int main(){
 
 	
 	int vArray[MAXARRAY];
 	int numE;
-	// float media;
+	float media;
 
 	printf("BIENVENIDOS AL PROGRAMA ARRAY MEDIA:\n");
 	numE = pideNumEntreRango(1,MAXARRAY);
 	inicialitzarVector(vArray, numE);
 	pintaVector (vArray, numE);
-	// int mediaArray (vnum, numE);
+	media =  mediaArray (vArray, numE);
+	printf("\nLa media de los numeros del Array es: %.2f\n\n", media);
+	system("pause");
 
 	getch();
 	
@@ -89,3 +91,13 @@ printf("E numero de la posicion %d del array es %d;\n", i, vArray[i]);
 }
 }
 
+float mediaArray (int vNum [], int numE)
+{
+float media=0;
+for(int i=0;i<numE;i++)
+	{
+		media=media+ vNum[i];
+	}
+media=media/(float)numE;
+return media;
+}
